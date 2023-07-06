@@ -4,6 +4,8 @@ TODO
 __pycache__
 *.egg-info/
 
+/.idea
+/venv/
 /build/
 /dist/
 
