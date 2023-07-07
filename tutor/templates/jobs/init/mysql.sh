@@ -1,5 +1,5 @@
 echo "Initialising MySQL..."
-mysql_connection_max_attempts=10
+mysql_connection_max_attempts=15
 mysql_connection_attempt=0
 until mysql -u {{ MYSQL_ROOT_USERNAME }} --password="{{ MYSQL_ROOT_PASSWORD }}" --host "{{ MYSQL_HOST }}" --port {{ MYSQL_PORT }} -e 'exit'
 do
@@ -10,7 +10,7 @@ do
       echo "MySQL initialisation error" 1>&2
       exit 1
     fi
-    sleep 10
+    sleep 20
 done
 echo "MySQL is up and running"
 
